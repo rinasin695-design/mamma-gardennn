@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mamma 🌷</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;
+ font-family:Arial,sans-serif;text-align:center;
+ background:linear-gradient(#180e3b,#55366f,#f6a8c7);
+ color:white;padding:25px 15px;
+}
+h1{color:#ffe1ef;font-size:32px}
+p{line-height:1.7}
+.garden{display:flex;justify-content:center;gap:12px;
+ flex-wrap:wrap;margin:35px auto}
+.flower{font-size:48px;cursor:pointer;
+ animation:sway 2s infinite alternate}
+@keyframes sway{to{transform:rotate(12deg) scale(1.1)}}
+button{
+ background:#ffb5d2;color:#65234d;border:0;
+ border-radius:30px;padding:14px 22px;
+ font-size:16px;font-weight:bold;cursor:pointer;
+}
+#message{display:none;margin:25px auto;max-width:400px;
+ background:#ffffff20;padding:22px;border-radius:20px;
+ border:1px solid #ffffff50}
+.heart{position:fixed;bottom:-30px;
+ animation:up 5s linear forwards;pointer-events:none}
+@keyframes up{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<h1>A Little Garden for Mamma 🌷</h1>
+<p>Ek chhota sa surprise, sirf tumhare liye 💗</p>
+
+<div class="garden">
+ <span class="flower" onclick="bloom(this)">🌷</span>
+ <span class="flower" onclick="bloom(this)">🌸</span>
+ <span class="flower" onclick="bloom(this)">🌻</span>
+ <span class="flower" onclick="bloom(this)">🌹</span>
+ <span class="flower" onclick="bloom(this)">🌼</span>
+</div>
+
+<p>Flowers par click karke garden ko aur special banao ✨</p>
+
+<button onclick="surprise()">Open Your Little Surprise 💌</button>
+
+<div id="message">
+ <h2>For You, Mamma 💗</h2>
+ <p>
+  Tumhari smile bahut special hai. 🌸<br>
+  Tumhari khushi dekhkar dil khush ho jaata hai.<br>
+  Chahe din kaisa bhi ho, I hope tumhare chehre par
+  ek chhoti si smile aa jaaye. 🦋
+ </p>
+ <p>Take care of yourself, Mamma. ❤️</p>
+</div>
+
+<script>
+function bloom(f){
+ f.style.transform="scale(1.5) rotate(0deg)";
+ f.textContent=["🌷","🌸","🌹","💐","🌻"][
+ Math.floor(Math.random()*5)];
+ hearts(5);
+}
+function surprise(){
+ document.getElementById("message").style.display="block";
+ hearts(30);
+}
+function hearts(n){
+ for(let i=0;i<n;i++){
+  let h=document.createElement("span");
+  h.className="heart";
+  h.textContent=["💗","💕","🌸","✨","🦋"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(18+Math.random()*20)+"px";
+  h.style.animationDuration=(3+Math.random()*4)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+ }
+}
+</script>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('bgMusic').play()">
+  🎵 Play Music for Mamma ❤️
+</button>
+<div style="max-width:500px;margin:30px auto;padding:25px;text-align:center;background:#fff0f5;border-radius:20px;color:#713c55;font-family:Georgia,serif;box-shadow:0 4px 18px #e7b6cc;">
+  <div style="font-size:45px;">🌸🌷🦋</div>
+  <h2>For My Mamma ❤️</h2>
+  <p>Dear Mamma,</p>
+  <p>I don't know what the future holds, but I will always wish the best for you.</p>
+  <p>May your life be filled with happiness, peace, success, and beautiful moments. May all your dreams come true, and may your smile never fade. 🌹</p>
+  <p>Thank you for being such a special part of my life and for giving me memories I will always cherish.</p>
+  <p>Even if our paths become different, I genuinely hope life gives you every beautiful thing you deserve.</p>
+  <h3>Always keep smiling, Mamma ❤️</h3>
+  <p>With heartfelt wishes 🌷</p>
+</div>
+<div style="max-width:420px;margin:35px auto;padding:28px 22px;text-align:center;background:linear-gradient(145deg,#fff7fb,#ffe4ef);border:1px solid #f3c1d5;border-radius:24px;box-shadow:0 8px 25px #e8b5ca66;color:#75445a;font-family:Georgia,serif;">
+  <div style="font-size:42px;">💌</div>
+  <h2 style="color:#c04e7b;">A Little Note for Mamma</h2>
+  <p style="font-size:17px;">Mamma ❤️</p>
+
+  <p style="line-height:1.8;">
+    I just wish we could try once more. 🥺❤️
+  </p>
+
+  <p style="line-height:1.8;">
+    I still care about you, and I hope we can make things better together. 🌷
+  </p>
+
+  <p style="line-height:1.8;">
+    Whatever happens, I always wish the best for you.
+  </p>
+
+  <div style="font-size:27px;margin-top:18px;">🌹🦋🌸</div>
+  <p style="font-style:italic;">With love, always ❤️</p>
+</div>
+</body>
+</html>
